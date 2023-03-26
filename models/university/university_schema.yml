@@ -1,0 +1,84 @@
+
+version: 2
+
+sources:
+  - name: dbt_university
+    description: table containing details of universities 
+    database: dbt
+    schema: postgres
+    tables:
+      - name: university
+
+models:
+  - name: university_staging
+    description: "Add new univ_code column to university table"
+    columns:
+      - name: id
+        description: "university id"
+        tests:
+          - unique
+          - not_null
+      - name: trimmed_univ_name
+        description: "university name"
+        tests:
+          - not_null
+      - name: univ_address
+        description: "university address"
+        tests:
+          - not_null
+      - name: univ_type
+        description: "university type"
+        tests:
+          - not_null
+      - name: student_dept_ratio
+        description: "student dept ratio"
+        tests:
+          - not_null
+  - name: ug_university
+    description: "table only with column university type as UG "
+    columns:
+      - name: id
+        description: "university id"
+        tests:
+          - unique
+          - not_null
+      - name: trimmed_univ_name
+        description: "university name"
+        tests:
+          - not_null
+      - name: univ_address
+        description: "university address"
+        tests:
+          - not_null
+      - name: univ_type
+        description: "university type"
+        tests:
+          - not_null
+      - name: student_dept_ratio
+        description: "student dept ratio"
+        tests:
+          - not_null
+  - name: pg_university
+    description: "table only with column university type as PG"
+    columns:
+      - name: id
+        description: "university id"
+        tests:
+          - unique
+          - not_null
+      - name: trimmed_univ_name
+        description: "university name"
+        tests:
+          - not_null
+      - name: univ_address
+        description: "university address"
+        tests:
+          - not_null
+      - name: univ_type
+        description: "university type"
+        tests:
+          - not_null
+      - name: student_dept_ratio
+        description: "student dept ratio"
+        tests:
+          - not_null

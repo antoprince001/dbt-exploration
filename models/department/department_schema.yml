@@ -1,0 +1,10 @@
+
+version: 2
+
+sources:
+  - name: dbt_department
+    description: table containing details of departments of universities 
+    database: dbt
+    schema: postgres
+    tables:
+      - name: department
